@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :plan, only: :create
 
   get 'plan/:id', to: 'home#show_plan', as: :show_plan
+  get 'about', to: 'home#about', as: :about
+  get 'contact', to: 'home#contact', as: :contact
+  get 'prices', to: 'home#prices', as: :prices
 end
