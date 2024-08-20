@@ -13,3 +13,76 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+:root {
+  --primary-color: #212121;
+  --primary-background: #607D8B;
+  --secondary-color: #F5F5F5;
+  --primary-button: #FFA726;
+  --primary-action: #2E7D32;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--secondary-color) !important; 
+  color: var(--primary-color) !important;
+}
+
+nav {
+  color: var(--primary-color);
+  padding: 10px;
+  border-bottom: var(--primary-background) 4px solid;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-action);
+  font-weight: 500;
+  font-size: large;
+}
+nav a:hover {
+  color: var(--primary-button);
+}
+
+.section-home {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 10px;
+  border-bottom: var(--primary-background) 4px solid;
+}
+ .rajdhani-light {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .rajdhani-regular {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .rajdhani-semibold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .rajdhani-bold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  * {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }

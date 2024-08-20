@@ -1,0 +1,31 @@
+
+<%= render partial: "components/navbar"%>
+<div class="section-home h-100">
+  <h4>Precisa de ajuda para planejar o seu dia, sua semana, ou então, tarefas em diferentes momentos?</h4>
+  <p>Estamos aqui para te ajudar!</p>
+  <%= form_with url: plan_index_path, method: "post" do |form| %>
+    <div class="d-flex flex-column">
+      <p>Informe para qual periodo você quer o planejamento</p>
+      <div>
+        <%= form.radio_button :type, :diario %>
+        <%= form.label :daily, "Diário" %>
+      </div>
+      <div>
+        <%= form.radio_button :type, :semanal %>
+        <%= form.label :weekly, "Semanal" %>
+      </div>
+      <div>
+        <%= form.radio_button :type, :customizado %>
+        <%= form.label :custom, "Customizado" %>
+      </div>
+    </div>
+  
+    <div class="d-flex flex-column">
+      <%= form.label 'Agora me informe quais são as suas tarefas, acresente o máximo de informações possível para que o nosso cálculo seja mais assertivo!' %>
+      <%= form.text_area :description %>
+    </div>
+    <div>
+      <%= form.submit "Enviar" %>
+    </div>
+  <% end %>
+</div>
