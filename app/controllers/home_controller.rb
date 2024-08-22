@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, only: [:show_plan]
+
   def index; end
 
   def show_plan

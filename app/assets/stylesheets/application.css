@@ -34,14 +34,18 @@ nav {
   border-bottom: var(--primary-background) 4px solid;
 }
 
-nav a {
+nav a, nav form button {
   text-decoration: none;
   color: var(--primary-action);
   font-weight: 500;
   font-size: large;
 }
-nav a:hover {
+nav a:hover, nav form button:hover {
   color: var(--primary-button);
+}
+
+.logout-button {
+  border: 1px solid transparent;
 }
 
 .section-home {
@@ -49,6 +53,36 @@ nav a:hover {
   color: var(--primary-color);
   padding: 10px;
   border-bottom: var(--primary-background) 4px solid;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+.new_user a {
+  text-decoration: none;
+  color: var(--primary-action);
+  font-weight: 400;
+  font-size: medium;
+}
+
+.new_user a:hover {
+  color: var(--primary-button);
+}
+
+#user_password, #user_email, #user_password_confirmation {
+  width: 20rem;
+}
+
+#user_remember_me:checked {
+    accent-color: var(--primary-button);  
+}
+
+#new_user input[type="submit"]:hover {
+  color: var(--primary-button);
 }
  .rajdhani-light {
     font-family: "Rajdhani", sans-serif;

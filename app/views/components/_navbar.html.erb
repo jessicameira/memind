@@ -1,12 +1,24 @@
-<nav class="d-flex p-2 justify-content-between">
-	<a href="/">Home</a>
-	<ul class="d-flex list-unstyled">
+<nav class="d-flex p-2 justify-content-between align-items-end">
+	<a href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-heart-fill" viewBox="0 0 16 16">
+			<path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+		</svg>
+		memind</a>
+	<ul class="d-flex list-unstyled m-0">
 		<li class="px-3"><a href="/about">Sobre nós</a></li>
 		<li class="px-3"><a href="/prices">Planos e valores</a></li>
 		<li class="px-3"><a href="/contact">Contato</a></li>
 	</ul>
-	<ul class="d-flex list-unstyled">
-		<li class="px-3"><a href="/login">Login</a></li>
-		<li class="px-3"><a href="/register">Registrar</a></li>
+	<% if user_signed_in? %>
+	<ul class="d-flex list-unstyled m-0 align-items-end">
+		<li class="px-3"><a href="/dashboard">Dashboard</a></li>
+		<li class="px-3"><a href="/profile">perfil</a></li>
+		<li class="px-3"><%= button_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'p-0 logout-button' %></li>
 	</ul>
+	<% else %>
+	<ul class="d-flex list-unstyled m-0">
+		<li class="px-3"><a href="/users/sign_in">Acessar</a></li>
+		<li class="px-3"><a href="/users/sign_up">Registrar</a></li>
+	</ul>
+	<% end %>
 </nav>

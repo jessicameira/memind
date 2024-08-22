@@ -1,0 +1,17 @@
+<div>
+	<h1>Seu planejamento:</h1>
+	<Table>
+		<tr>
+			<th>Descrição</th>
+			<th>Resposta</th>
+			<th> </th>
+		</tr>
+		<% for plan in @plans %>
+			<tr>
+				<td><%= plan.description %></td>
+				<td><%= simple_format(plan.answer) %></td>
+				<td><%= link_to 'Visualizar', show_plan_path(plan)%></td>
+			</tr>
+		<% end %>
+	</Table>
+</div>

@@ -1,4 +1,5 @@
 class PlanController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
   def create
     response = client.generate_content(payload)
     result = response['candidates'][0]['content']['parts'][0]['text']
@@ -9,6 +10,10 @@ class PlanController < ApplicationController
       format.html { redirect_to show_plan_path(plan.id) }
       format.json { render json: { response: result } }
     end
+  end
+
+  def index
+    @plans = Plan.all
   end
   
   private
