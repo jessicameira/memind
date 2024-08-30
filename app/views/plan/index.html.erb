@@ -1,17 +1,27 @@
 <div>
 	<h1>Seu planejamento:</h1>
-	<Table>
-		<tr>
-			<th>Descrição</th>
-			<th>Resposta</th>
-			<th> </th>
-		</tr>
-		<% for plan in @plans %>
+	<% if @plans.empty? %>
+		<p>Você ainda não possui nenhuma tarefa planejada.</p>
+		<p>Para criar, clique no botão abaixo:</p>
+		<%= link_to 'Criar novo planejamento', root_path, class: 'btn btn-primary' %>
+	<% else %>
+	<Table class="table">
+		<thead>
 			<tr>
-				<td><%= plan.description %></td>
-				<td><%= simple_format(plan.answer) %></td>
-				<td><%= link_to 'Visualizar', show_plan_path(plan)%></td>
+				<th>Descrição</th>
+				<th>Resposta</th>
+				<th> </th>
 			</tr>
-		<% end %>
+		</thead>
+		<tbody>
+			<% for plan in @plans %>
+				<tr >
+					<td class="table-field"><div class="text-truncate"><%= plan.description %></div></td>
+					<td class="table-field"><div class="text-truncate"><%= plan.answer %></div></td>
+					<td><div><%= link_to 'Visualizar', show_plan_path(plan), class: 'view_plan' %></div></td>
+				</tr>
+			<% end %>
+		</tbody>
 	</Table>
+	<% end %>
 </div>

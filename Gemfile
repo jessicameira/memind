@@ -47,6 +47,7 @@ gem 'dartsass-sprockets'
 gem 'gemini-ai', '~> 4.2.0'
 gem 'pry', '~> 0.14.2'
 gem 'pry-rails', '~> 0.3.11'
+gem 'faraday', '~> 2.11'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

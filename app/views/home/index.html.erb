@@ -7,18 +7,33 @@
       <p>Informe para qual periodo você quer o planejamento</p>
       <div>
         <%= form.radio_button :type, :diario %>
-        <%= form.label :daily, "Diário" %>
+        <%= form.label :daily, "Hoje" %>
       </div>
       <div>
         <%= form.radio_button :type, :semanal %>
-        <%= form.label :weekly, "Semanal" %>
-      </div>
-      <div>
-        <%= form.radio_button :type, :customizado %>
-        <%= form.label :custom, "Customizado" %>
+        <%= form.label :weekly, "Esta semana" %>
       </div>
     </div>
-  
+    <div class="d-flex flex-column">
+      <p>Você possui horários já definidos de trabalho no seu dia?</p>
+      <div class="d-flex">
+        <div>
+          <%= form.radio_button :busy, :true %>
+          <%= form.label :busy, "Sim" %>
+        </div>
+        <div>
+          <%= form.radio_button :busy, :false %>
+          <%= form.label :not_busy, "Não" %>
+        </div>
+      </div>
+      <div>
+        <p>Informe o horário de trabalho inicial e final</p>
+        <div class="d-flex">
+          <%= form.text_field :start, as: :date, class: 'form-control' %> 
+          <%= form.text_field :end, as: :date, class: 'form-control' %> 
+        </div>
+      </div>
+    </div>
     <div class="d-flex flex-column">
       <%= form.label 'Agora me informe quais são as suas tarefas, acresente o máximo de informações possível para que o nosso cálculo seja mais assertivo!' %>
       <%= form.text_area :description %>

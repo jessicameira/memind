@@ -1,6 +1,12 @@
 <div>
-  <p>Pergunta feita:</p>
-  <p><%= @plan.description%></p>
-  <p>Resposta:</p>
-  <p><%= simple_format(@plan.answer) %></p>
+  <p>Nossa indicação:</p>
+  <div>
+    <% @tasks.each do |task| %>
+     <p><%= task['titulo'] %></p>
+     <p><%= task['horario_inicio'] %></p>
+     <p><%= task['horario_fim'] %></p>
+     <p><%= task['detalhes'] %></p>
+    <% end %>
+    <p><%= @tips%></p>
+  </div>
 </div>

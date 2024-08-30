@@ -12,7 +12,7 @@
 	<% if user_signed_in? %>
 	<ul class="d-flex list-unstyled m-0 align-items-end">
 		<li class="px-3"><a href="/dashboard">Dashboard</a></li>
-		<li class="px-3"><a href="/profile">perfil</a></li>
+		<li class="px-3"> <%= link_to 'Perfil', edit_user_registration_path(current_user)%> </li>
 		<li class="px-3"><%= button_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'p-0 logout-button' %></li>
 	</ul>
 	<% else %>

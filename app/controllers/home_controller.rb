@@ -5,6 +5,9 @@ class HomeController < ApplicationController
 
   def show_plan
     @plan = Plan.find(params[:id])
+    parsed_answer = JSON.parse(@plan.answer)
+    @tasks = parsed_answer['tarefas']
+    @tips = parsed_answer['dicas']
   end
 
   def about; end

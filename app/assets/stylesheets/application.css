@@ -62,14 +62,14 @@ nav a:hover, nav form button:hover {
   align-items: end;
 }
 
-.new_user a {
+.new_user a, .view_plan {
   text-decoration: none;
   color: var(--primary-action);
   font-weight: 400;
   font-size: medium;
 }
 
-.new_user a:hover {
+.new_user a:hover, .view_plan:hover {
   color: var(--primary-button);
 }
 
@@ -81,8 +81,13 @@ nav a:hover, nav form button:hover {
     accent-color: var(--primary-button);  
 }
 
-#new_user input[type="submit"]:hover {
+#new_user input[type="submit"]:hover{
   color: var(--primary-button);
+}
+
+.table-field{
+  max-height: 4rem;
+  max-width: 31vw;
 }
  .rajdhani-light {
     font-family: "Rajdhani", sans-serif;
